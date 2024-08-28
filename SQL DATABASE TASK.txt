@@ -1,0 +1,28 @@
+Design DB model for Guvi Zen class
+
+-- Create table
+CREATE TABLE IF NOT EXISTS GuviZenClass (id INTEGER PRIMARY KEY NOT NULL, student_name TEXT NOT NULL, email TEXT NOT NULL, batch TEXT NOT NULL, timing TEXT NOT NULL, task_completed INTEGER NOT NULL, total_task INTEGER NOT NULL);
+
+-- Insert values in table
+INSERT INTO GuviZenClass values (1, "Vishnu", "vichu@email.com", "FSD", "8 AM - 11 AM", 24, 28);
+-- Updating rows
+UPDATE GuviZenClass SET task_completed = 24, total_task = 28 WHERE id = 2;
+-- Deleting rows
+DELETE FROM GuviZenClass WHERE id = 1;
+
+-- Altering table
+-- Add new columns
+ALTER TABLE GuviZenClass ADD mentor TEXT NOT NULL DEFAULT "Vishnu";
+-- Rename column
+ALTER TABLE GuviZenClass RENAME task_completed to task_submitted;
+-- Removing column
+ALTER TABLE GuviZenClass DROP mentor;
+
+-- Renaming the table
+ALTER TABLE GuviZenClass RENAME TO ZenClass;
+
+-- Dropping table
+DROP TABLE IF EXISTS ZenClass;
+
+-- fetch all values
+SELECT * from GuviZenClass;
